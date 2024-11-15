@@ -1,0 +1,216 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #bb2323; /* Improved visibility */
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: animateBackground 20s infinite linear;
+}
+
+/* Keyframe Animation for Background */
+@keyframes animateBackground {
+    0% {
+        background-position: center top;
+    }
+    50% {
+        background-position: center bottom;
+    }
+    100% {
+        background-position: center top;
+    }
+}
+
+h2, h3 {
+    color: #ff9800;
+    text-shadow: 2px 2px 10px rgba(231, 135, 8, 0.7);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+    font-size: 2.8em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 2.2em;
+    margin-top: 15px;
+}
+
+/* Enhanced Navigation */
+.header {
+    background: linear-gradient(90deg, #1c1c1c, #333);
+    color: #861616;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.header h2 {
+    font-size: 2.2em;
+    margin: 0;
+    color: #ff9800;
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.navigation li {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.navigation a {
+    color: #ff9800;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navigation a:hover {
+    background: linear-gradient(45deg, #f44336, #ff9800);
+    color: #c03d3d;
+    transform: scale(1.1);
+}
+
+.navigation li:hover {
+    transform: translateY(-3px);
+}
+
+/* Dropdown Menu */
+.navigation .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.navigation li:hover .dropdown {
+    display: flex;
+}
+
+.navigation .dropdown a {
+    padding: 10px 15px;
+    font-size: 1em;
+    color: #c71515;
+}
+
+.navigation .dropdown a:hover {
+    background: linear-gradient(45deg, #ff9800, #f44336);
+    color: #a51818;
+}
+
+/* Logout Button */
+.logout-button {
+    background: linear-gradient(45deg, #dc3545, #ff5f5f);
+    padding: 12px 25px;
+    border-radius: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.logout-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.5);
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(45deg, #ff9800, #f44336);
+    color: #8a1919;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.4s ease, transform 0.2s ease, box-shadow 0.4s ease;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #f44336, #ff5722);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 87, 34, 0.5);
+}
+
+/* Form Styling */
+form {
+    background: rgba(161, 33, 33, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.5s ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .header, .navigation ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation ul {
+        gap: 15px;
+    }
+
+    form {
+        width: 90%;
+    }
+    
+    h2, h3 {
+        font-size: 1.8em;
+    }
+}
